@@ -6,43 +6,43 @@
 #include <stdlib.h>
 #include <string.h>
 
-#ifndef GLAD_IMPL_UTIL_C_
-#define GLAD_IMPL_UTIL_C_
+#ifndef GLEXT_IMPL_UTIL_C_
+#define GLEXT_IMPL_UTIL_C_
 
 #ifdef _MSC_VER
-#define GLAD_IMPL_UTIL_SSCANF sscanf_s
+#define GLEXT_IMPL_UTIL_SSCANF sscanf_s
 #else
-#define GLAD_IMPL_UTIL_SSCANF sscanf
+#define GLEXT_IMPL_UTIL_SSCANF sscanf
 #endif
 
-#endif /* GLAD_IMPL_UTIL_C_ */
+#endif /* GLEXT_IMPL_UTIL_C_ */
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
-int GLAD_GL_VERSION_1_0 = 0;
-int GLAD_GL_VERSION_1_1 = 0;
-int GLAD_GL_VERSION_1_2 = 0;
-int GLAD_GL_VERSION_1_3 = 0;
-int GLAD_GL_VERSION_1_4 = 0;
-int GLAD_GL_VERSION_1_5 = 0;
-int GLAD_GL_VERSION_2_0 = 0;
-int GLAD_GL_VERSION_2_1 = 0;
-int GLAD_GL_VERSION_3_0 = 0;
-int GLAD_GL_VERSION_3_1 = 0;
-int GLAD_GL_VERSION_3_2 = 0;
-int GLAD_GL_VERSION_3_3 = 0;
-int GLAD_GL_ARB_base_instance = 0;
-int GLAD_GL_ARB_draw_indirect = 0;
-int GLAD_GL_ARB_explicit_uniform_location = 0;
-int GLAD_GL_ARB_map_buffer_alignment = 0;
-int GLAD_GL_ARB_multi_draw_indirect = 0;
-int GLAD_GL_ARB_separate_shader_objects = 0;
-int GLAD_GL_ARB_shading_language_420pack = 0;
-int GLAD_GL_ARB_texture_buffer_range = 0;
-int GLAD_GL_ARB_texture_storage = 0;
-int GLAD_GL_ARB_vertex_attrib_binding = 0;
+int GLEXT_GL_VERSION_1_0 = 0;
+int GLEXT_GL_VERSION_1_1 = 0;
+int GLEXT_GL_VERSION_1_2 = 0;
+int GLEXT_GL_VERSION_1_3 = 0;
+int GLEXT_GL_VERSION_1_4 = 0;
+int GLEXT_GL_VERSION_1_5 = 0;
+int GLEXT_GL_VERSION_2_0 = 0;
+int GLEXT_GL_VERSION_2_1 = 0;
+int GLEXT_GL_VERSION_3_0 = 0;
+int GLEXT_GL_VERSION_3_1 = 0;
+int GLEXT_GL_VERSION_3_2 = 0;
+int GLEXT_GL_VERSION_3_3 = 0;
+int GLEXT_GL_ARB_base_instance = 0;
+int GLEXT_GL_ARB_draw_indirect = 0;
+int GLEXT_GL_ARB_explicit_uniform_location = 0;
+int GLEXT_GL_ARB_map_buffer_alignment = 0;
+int GLEXT_GL_ARB_multi_draw_indirect = 0;
+int GLEXT_GL_ARB_separate_shader_objects = 0;
+int GLEXT_GL_ARB_shading_language_420pack = 0;
+int GLEXT_GL_ARB_texture_buffer_range = 0;
+int GLEXT_GL_ARB_texture_storage = 0;
+int GLEXT_GL_ARB_vertex_attrib_binding = 0;
 
 PFNGLACTIVESHADERPROGRAMPROC gl_active_shader_program = NULL;
 PFNGLACTIVETEXTUREPROC gl_active_texture = NULL;
@@ -473,7 +473,7 @@ PFNGLVIEWPORTPROC gl_viewport = NULL;
 PFNGLWAITSYNCPROC gl_wait_sync = NULL;
 
 static void glext_load_gl_version_1_0(GLADuserptrloadfunc load, void *userptr) {
-  if (!GLAD_GL_VERSION_1_0) return;
+  if (!GLEXT_GL_VERSION_1_0) return;
   gl_blend_func = (PFNGLBLENDFUNCPROC)load(userptr, "glBlendFunc");
   gl_clear = (PFNGLCLEARPROC)load(userptr, "glClear");
   gl_clear_color = (PFNGLCLEARCOLORPROC)load(userptr, "glClearColor");
@@ -524,7 +524,7 @@ static void glext_load_gl_version_1_0(GLADuserptrloadfunc load, void *userptr) {
   gl_viewport = (PFNGLVIEWPORTPROC)load(userptr, "glViewport");
 }
 static void glext_load_gl_version_1_1(GLADuserptrloadfunc load, void *userptr) {
-  if (!GLAD_GL_VERSION_1_1) return;
+  if (!GLEXT_GL_VERSION_1_1) return;
   gl_bind_texture = (PFNGLBINDTEXTUREPROC)load(userptr, "glBindTexture");
   gl_copy_tex_image1d = (PFNGLCOPYTEXIMAGE1DPROC)load(userptr, "glCopyTexImage1D");
   gl_copy_tex_image2d = (PFNGLCOPYTEXIMAGE2DPROC)load(userptr, "glCopyTexImage2D");
@@ -540,14 +540,14 @@ static void glext_load_gl_version_1_1(GLADuserptrloadfunc load, void *userptr) {
   gl_tex_sub_image2d = (PFNGLTEXSUBIMAGE2DPROC)load(userptr, "glTexSubImage2D");
 }
 static void glext_load_gl_version_1_2(GLADuserptrloadfunc load, void *userptr) {
-  if (!GLAD_GL_VERSION_1_2) return;
+  if (!GLEXT_GL_VERSION_1_2) return;
   gl_copy_tex_sub_image3d = (PFNGLCOPYTEXSUBIMAGE3DPROC)load(userptr, "glCopyTexSubImage3D");
   gl_draw_range_elements = (PFNGLDRAWRANGEELEMENTSPROC)load(userptr, "glDrawRangeElements");
   gl_tex_image3d = (PFNGLTEXIMAGE3DPROC)load(userptr, "glTexImage3D");
   gl_tex_sub_image3d = (PFNGLTEXSUBIMAGE3DPROC)load(userptr, "glTexSubImage3D");
 }
 static void glext_load_gl_version_1_3(GLADuserptrloadfunc load, void *userptr) {
-  if (!GLAD_GL_VERSION_1_3) return;
+  if (!GLEXT_GL_VERSION_1_3) return;
   gl_active_texture = (PFNGLACTIVETEXTUREPROC)load(userptr, "glActiveTexture");
   gl_compressed_tex_image1d = (PFNGLCOMPRESSEDTEXIMAGE1DPROC)load(userptr, "glCompressedTexImage1D");
   gl_compressed_tex_image2d = (PFNGLCOMPRESSEDTEXIMAGE2DPROC)load(userptr, "glCompressedTexImage2D");
@@ -559,7 +559,7 @@ static void glext_load_gl_version_1_3(GLADuserptrloadfunc load, void *userptr) {
   gl_sample_coverage = (PFNGLSAMPLECOVERAGEPROC)load(userptr, "glSampleCoverage");
 }
 static void glext_load_gl_version_1_4(GLADuserptrloadfunc load, void *userptr) {
-  if (!GLAD_GL_VERSION_1_4) return;
+  if (!GLEXT_GL_VERSION_1_4) return;
   gl_blend_color = (PFNGLBLENDCOLORPROC)load(userptr, "glBlendColor");
   gl_blend_equation = (PFNGLBLENDEQUATIONPROC)load(userptr, "glBlendEquation");
   gl_blend_func_separate = (PFNGLBLENDFUNCSEPARATEPROC)load(userptr, "glBlendFuncSeparate");
@@ -571,7 +571,7 @@ static void glext_load_gl_version_1_4(GLADuserptrloadfunc load, void *userptr) {
   gl_point_parameteriv = (PFNGLPOINTPARAMETERIVPROC)load(userptr, "glPointParameteriv");
 }
 static void glext_load_gl_version_1_5(GLADuserptrloadfunc load, void *userptr) {
-  if (!GLAD_GL_VERSION_1_5) return;
+  if (!GLEXT_GL_VERSION_1_5) return;
   gl_begin_query = (PFNGLBEGINQUERYPROC)load(userptr, "glBeginQuery");
   gl_bind_buffer = (PFNGLBINDBUFFERPROC)load(userptr, "glBindBuffer");
   gl_buffer_data = (PFNGLBUFFERDATAPROC)load(userptr, "glBufferData");
@@ -593,7 +593,7 @@ static void glext_load_gl_version_1_5(GLADuserptrloadfunc load, void *userptr) {
   gl_unmap_buffer = (PFNGLUNMAPBUFFERPROC)load(userptr, "glUnmapBuffer");
 }
 static void glext_load_gl_version_2_0(GLADuserptrloadfunc load, void *userptr) {
-  if (!GLAD_GL_VERSION_2_0) return;
+  if (!GLEXT_GL_VERSION_2_0) return;
   gl_attach_shader = (PFNGLATTACHSHADERPROC)load(userptr, "glAttachShader");
   gl_bind_attrib_location = (PFNGLBINDATTRIBLOCATIONPROC)load(userptr, "glBindAttribLocation");
   gl_blend_equation_separate = (PFNGLBLENDEQUATIONSEPARATEPROC)load(userptr, "glBlendEquationSeparate");
@@ -689,7 +689,7 @@ static void glext_load_gl_version_2_0(GLADuserptrloadfunc load, void *userptr) {
   gl_vertex_attrib_pointer = (PFNGLVERTEXATTRIBPOINTERPROC)load(userptr, "glVertexAttribPointer");
 }
 static void glext_load_gl_version_2_1(GLADuserptrloadfunc load, void *userptr) {
-  if (!GLAD_GL_VERSION_2_1) return;
+  if (!GLEXT_GL_VERSION_2_1) return;
   gl_uniform_matrix2x3fv = (PFNGLUNIFORMMATRIX2X3FVPROC)load(userptr, "glUniformMatrix2x3fv");
   gl_uniform_matrix2x4fv = (PFNGLUNIFORMMATRIX2X4FVPROC)load(userptr, "glUniformMatrix2x4fv");
   gl_uniform_matrix3x2fv = (PFNGLUNIFORMMATRIX3X2FVPROC)load(userptr, "glUniformMatrix3x2fv");
@@ -698,7 +698,7 @@ static void glext_load_gl_version_2_1(GLADuserptrloadfunc load, void *userptr) {
   gl_uniform_matrix4x3fv = (PFNGLUNIFORMMATRIX4X3FVPROC)load(userptr, "glUniformMatrix4x3fv");
 }
 static void glext_load_gl_version_3_0(GLADuserptrloadfunc load, void *userptr) {
-  if (!GLAD_GL_VERSION_3_0) return;
+  if (!GLEXT_GL_VERSION_3_0) return;
   gl_begin_conditional_render = (PFNGLBEGINCONDITIONALRENDERPROC)load(userptr, "glBeginConditionalRender");
   gl_begin_transform_feedback = (PFNGLBEGINTRANSFORMFEEDBACKPROC)load(userptr, "glBeginTransformFeedback");
   gl_bind_buffer_base = (PFNGLBINDBUFFERBASEPROC)load(userptr, "glBindBufferBase");
@@ -785,7 +785,7 @@ static void glext_load_gl_version_3_0(GLADuserptrloadfunc load, void *userptr) {
   gl_vertex_attrib_i_pointer = (PFNGLVERTEXATTRIBIPOINTERPROC)load(userptr, "glVertexAttribIPointer");
 }
 static void glext_load_gl_version_3_1(GLADuserptrloadfunc load, void *userptr) {
-  if (!GLAD_GL_VERSION_3_1) return;
+  if (!GLEXT_GL_VERSION_3_1) return;
   gl_bind_buffer_base = (PFNGLBINDBUFFERBASEPROC)load(userptr, "glBindBufferBase");
   gl_bind_buffer_range = (PFNGLBINDBUFFERRANGEPROC)load(userptr, "glBindBufferRange");
   gl_copy_buffer_sub_data = (PFNGLCOPYBUFFERSUBDATAPROC)load(userptr, "glCopyBufferSubData");
@@ -803,7 +803,7 @@ static void glext_load_gl_version_3_1(GLADuserptrloadfunc load, void *userptr) {
   gl_uniform_block_binding = (PFNGLUNIFORMBLOCKBINDINGPROC)load(userptr, "glUniformBlockBinding");
 }
 static void glext_load_gl_version_3_2(GLADuserptrloadfunc load, void *userptr) {
-  if (!GLAD_GL_VERSION_3_2) return;
+  if (!GLEXT_GL_VERSION_3_2) return;
   gl_client_wait_sync = (PFNGLCLIENTWAITSYNCPROC)load(userptr, "glClientWaitSync");
   gl_delete_sync = (PFNGLDELETESYNCPROC)load(userptr, "glDeleteSync");
   gl_draw_elements_base_vertex = (PFNGLDRAWELEMENTSBASEVERTEXPROC)load(userptr, "glDrawElementsBaseVertex");
@@ -825,7 +825,7 @@ static void glext_load_gl_version_3_2(GLADuserptrloadfunc load, void *userptr) {
   gl_wait_sync = (PFNGLWAITSYNCPROC)load(userptr, "glWaitSync");
 }
 static void glext_load_gl_version_3_3(GLADuserptrloadfunc load, void *userptr) {
-  if (!GLAD_GL_VERSION_3_3) return;
+  if (!GLEXT_GL_VERSION_3_3) return;
   gl_bind_frag_data_location_indexed = (PFNGLBINDFRAGDATALOCATIONINDEXEDPROC)load(userptr, "glBindFragDataLocationIndexed");
   gl_bind_sampler = (PFNGLBINDSAMPLERPROC)load(userptr, "glBindSampler");
   gl_delete_samplers = (PFNGLDELETESAMPLERSPROC)load(userptr, "glDeleteSamplers");
@@ -856,24 +856,24 @@ static void glext_load_gl_version_3_3(GLADuserptrloadfunc load, void *userptr) {
   gl_vertex_attrib_p4uiv = (PFNGLVERTEXATTRIBP4UIVPROC)load(userptr, "glVertexAttribP4uiv");
 }
 static void glext_load_gl_arb_base_instance(GLADuserptrloadfunc load, void *userptr) {
-  if (!GLAD_GL_ARB_base_instance) return;
+  if (!GLEXT_GL_ARB_base_instance) return;
   gl_draw_arrays_instanced_base_instance = (PFNGLDRAWARRAYSINSTANCEDBASEINSTANCEPROC)load(userptr, "glDrawArraysInstancedBaseInstance");
   gl_draw_elements_instanced_base_instance = (PFNGLDRAWELEMENTSINSTANCEDBASEINSTANCEPROC)load(userptr, "glDrawElementsInstancedBaseInstance");
   gl_draw_elements_instanced_base_vertex_base_instance =
       (PFNGLDRAWELEMENTSINSTANCEDBASEVERTEXBASEINSTANCEPROC)load(userptr, "glDrawElementsInstancedBaseVertexBaseInstance");
 }
 static void glext_load_gl_arb_draw_indirect(GLADuserptrloadfunc load, void *userptr) {
-  if (!GLAD_GL_ARB_draw_indirect) return;
+  if (!GLEXT_GL_ARB_draw_indirect) return;
   gl_draw_arrays_indirect = (PFNGLDRAWARRAYSINDIRECTPROC)load(userptr, "glDrawArraysIndirect");
   gl_draw_elements_indirect = (PFNGLDRAWELEMENTSINDIRECTPROC)load(userptr, "glDrawElementsIndirect");
 }
 static void glext_load_gl_arb_multi_draw_indirect(GLADuserptrloadfunc load, void *userptr) {
-  if (!GLAD_GL_ARB_multi_draw_indirect) return;
+  if (!GLEXT_GL_ARB_multi_draw_indirect) return;
   gl_multi_draw_arrays_indirect = (PFNGLMULTIDRAWARRAYSINDIRECTPROC)load(userptr, "glMultiDrawArraysIndirect");
   gl_multi_draw_elements_indirect = (PFNGLMULTIDRAWELEMENTSINDIRECTPROC)load(userptr, "glMultiDrawElementsIndirect");
 }
 static void glext_load_gl_arb_separate_shader_objects(GLADuserptrloadfunc load, void *userptr) {
-  if (!GLAD_GL_ARB_separate_shader_objects) return;
+  if (!GLEXT_GL_ARB_separate_shader_objects) return;
   gl_active_shader_program = (PFNGLACTIVESHADERPROGRAMPROC)load(userptr, "glActiveShaderProgram");
   gl_bind_program_pipeline = (PFNGLBINDPROGRAMPIPELINEPROC)load(userptr, "glBindProgramPipeline");
   gl_create_shader_programv = (PFNGLCREATESHADERPROGRAMVPROC)load(userptr, "glCreateShaderProgramv");
@@ -937,17 +937,17 @@ static void glext_load_gl_arb_separate_shader_objects(GLADuserptrloadfunc load, 
   gl_validate_program_pipeline = (PFNGLVALIDATEPROGRAMPIPELINEPROC)load(userptr, "glValidateProgramPipeline");
 }
 static void glext_load_gl_arb_texture_buffer_range(GLADuserptrloadfunc load, void *userptr) {
-  if (!GLAD_GL_ARB_texture_buffer_range) return;
+  if (!GLEXT_GL_ARB_texture_buffer_range) return;
   gl_tex_buffer_range = (PFNGLTEXBUFFERRANGEPROC)load(userptr, "glTexBufferRange");
 }
 static void glext_load_gl_arb_texture_storage(GLADuserptrloadfunc load, void *userptr) {
-  if (!GLAD_GL_ARB_texture_storage) return;
+  if (!GLEXT_GL_ARB_texture_storage) return;
   gl_tex_storage1d = (PFNGLTEXSTORAGE1DPROC)load(userptr, "glTexStorage1D");
   gl_tex_storage2d = (PFNGLTEXSTORAGE2DPROC)load(userptr, "glTexStorage2D");
   gl_tex_storage3d = (PFNGLTEXSTORAGE3DPROC)load(userptr, "glTexStorage3D");
 }
 static void glext_load_gl_arb_vertex_attrib_binding(GLADuserptrloadfunc load, void *userptr) {
-  if (!GLAD_GL_ARB_vertex_attrib_binding) return;
+  if (!GLEXT_GL_ARB_vertex_attrib_binding) return;
   gl_bind_vertex_buffer = (PFNGLBINDVERTEXBUFFERPROC)load(userptr, "glBindVertexBuffer");
   gl_vertex_attrib_binding = (PFNGLVERTEXATTRIBBINDINGPROC)load(userptr, "glVertexAttribBinding");
   gl_vertex_attrib_format = (PFNGLVERTEXATTRIBFORMATPROC)load(userptr, "glVertexAttribFormat");
@@ -994,7 +994,7 @@ static int glext_get_extensions(const char **out_exts, char ***out_exts_i) {
     return 1;
   }
 #else
-  GLAD_UNUSED(out_exts_i);
+  GLEXT_UNUSED(out_exts_i);
 #endif
   if (gl_get_string == NULL) { return 0; }
   *out_exts = (const char *)gl_get_string(GL_EXTENSIONS);
@@ -1025,7 +1025,7 @@ static int glext_has_extension(const char *exts, char **exts_i, const char *ext)
 }
 
 static GLADapiproc glext_get_proc_from_userptr(void *userptr, const char *name) {
-  return (GLAD_GNUC_EXTENSION(GLADapiproc (*)(const char *name)) userptr)(name);
+  return (GLEXT_GNUC_EXTENSION(GLADapiproc (*)(const char *name)) userptr)(name);
 }
 
 static int glext_find_extensions_gl(void) {
@@ -1033,16 +1033,16 @@ static int glext_find_extensions_gl(void) {
   char **exts_i = NULL;
   if (!glext_get_extensions(&exts, &exts_i)) return 0;
 
-  GLAD_GL_ARB_base_instance = glext_has_extension(exts, exts_i, "GL_ARB_base_instance");
-  GLAD_GL_ARB_draw_indirect = glext_has_extension(exts, exts_i, "GL_ARB_draw_indirect");
-  GLAD_GL_ARB_explicit_uniform_location = glext_has_extension(exts, exts_i, "GL_ARB_explicit_uniform_location");
-  GLAD_GL_ARB_map_buffer_alignment = glext_has_extension(exts, exts_i, "GL_ARB_map_buffer_alignment");
-  GLAD_GL_ARB_multi_draw_indirect = glext_has_extension(exts, exts_i, "GL_ARB_multi_draw_indirect");
-  GLAD_GL_ARB_separate_shader_objects = glext_has_extension(exts, exts_i, "GL_ARB_separate_shader_objects");
-  GLAD_GL_ARB_shading_language_420pack = glext_has_extension(exts, exts_i, "GL_ARB_shading_language_420pack");
-  GLAD_GL_ARB_texture_buffer_range = glext_has_extension(exts, exts_i, "GL_ARB_texture_buffer_range");
-  GLAD_GL_ARB_texture_storage = glext_has_extension(exts, exts_i, "GL_ARB_texture_storage");
-  GLAD_GL_ARB_vertex_attrib_binding = glext_has_extension(exts, exts_i, "GL_ARB_vertex_attrib_binding");
+  GLEXT_GL_ARB_base_instance = glext_has_extension(exts, exts_i, "GL_ARB_base_instance");
+  GLEXT_GL_ARB_draw_indirect = glext_has_extension(exts, exts_i, "GL_ARB_draw_indirect");
+  GLEXT_GL_ARB_explicit_uniform_location = glext_has_extension(exts, exts_i, "GL_ARB_explicit_uniform_location");
+  GLEXT_GL_ARB_map_buffer_alignment = glext_has_extension(exts, exts_i, "GL_ARB_map_buffer_alignment");
+  GLEXT_GL_ARB_multi_draw_indirect = glext_has_extension(exts, exts_i, "GL_ARB_multi_draw_indirect");
+  GLEXT_GL_ARB_separate_shader_objects = glext_has_extension(exts, exts_i, "GL_ARB_separate_shader_objects");
+  GLEXT_GL_ARB_shading_language_420pack = glext_has_extension(exts, exts_i, "GL_ARB_shading_language_420pack");
+  GLEXT_GL_ARB_texture_buffer_range = glext_has_extension(exts, exts_i, "GL_ARB_texture_buffer_range");
+  GLEXT_GL_ARB_texture_storage = glext_has_extension(exts, exts_i, "GL_ARB_texture_storage");
+  GLEXT_GL_ARB_vertex_attrib_binding = glext_has_extension(exts, exts_i, "GL_ARB_vertex_attrib_binding");
 
   glext_free_extensions(exts_i);
 
@@ -1065,22 +1065,22 @@ static int glext_find_core_gl(void) {
     }
   }
 
-  GLAD_IMPL_UTIL_SSCANF(version, "%d.%d", &major, &minor);
+  GLEXT_IMPL_UTIL_SSCANF(version, "%d.%d", &major, &minor);
 
-  GLAD_GL_VERSION_1_0 = (major == 1 && minor >= 0) || major > 1;
-  GLAD_GL_VERSION_1_1 = (major == 1 && minor >= 1) || major > 1;
-  GLAD_GL_VERSION_1_2 = (major == 1 && minor >= 2) || major > 1;
-  GLAD_GL_VERSION_1_3 = (major == 1 && minor >= 3) || major > 1;
-  GLAD_GL_VERSION_1_4 = (major == 1 && minor >= 4) || major > 1;
-  GLAD_GL_VERSION_1_5 = (major == 1 && minor >= 5) || major > 1;
-  GLAD_GL_VERSION_2_0 = (major == 2 && minor >= 0) || major > 2;
-  GLAD_GL_VERSION_2_1 = (major == 2 && minor >= 1) || major > 2;
-  GLAD_GL_VERSION_3_0 = (major == 3 && minor >= 0) || major > 3;
-  GLAD_GL_VERSION_3_1 = (major == 3 && minor >= 1) || major > 3;
-  GLAD_GL_VERSION_3_2 = (major == 3 && minor >= 2) || major > 3;
-  GLAD_GL_VERSION_3_3 = (major == 3 && minor >= 3) || major > 3;
+  GLEXT_GL_VERSION_1_0 = (major == 1 && minor >= 0) || major > 1;
+  GLEXT_GL_VERSION_1_1 = (major == 1 && minor >= 1) || major > 1;
+  GLEXT_GL_VERSION_1_2 = (major == 1 && minor >= 2) || major > 1;
+  GLEXT_GL_VERSION_1_3 = (major == 1 && minor >= 3) || major > 1;
+  GLEXT_GL_VERSION_1_4 = (major == 1 && minor >= 4) || major > 1;
+  GLEXT_GL_VERSION_1_5 = (major == 1 && minor >= 5) || major > 1;
+  GLEXT_GL_VERSION_2_0 = (major == 2 && minor >= 0) || major > 2;
+  GLEXT_GL_VERSION_2_1 = (major == 2 && minor >= 1) || major > 2;
+  GLEXT_GL_VERSION_3_0 = (major == 3 && minor >= 0) || major > 3;
+  GLEXT_GL_VERSION_3_1 = (major == 3 && minor >= 1) || major > 3;
+  GLEXT_GL_VERSION_3_2 = (major == 3 && minor >= 2) || major > 3;
+  GLEXT_GL_VERSION_3_3 = (major == 3 && minor >= 3) || major > 3;
 
-  return GLAD_MAKE_VERSION(major, minor);
+  return GLEXT_MAKE_VERSION(major, minor);
 }
 
 int glext_load_gl_user_ptr(GLADuserptrloadfunc load, void *userptr) {
@@ -1115,7 +1115,7 @@ int glext_load_gl_user_ptr(GLADuserptrloadfunc load, void *userptr) {
   return version;
 }
 
-int glext_load_gl(GLADloadfunc load) { return glext_load_gl_user_ptr(glext_get_proc_from_userptr, GLAD_GNUC_EXTENSION(void *) load); }
+int glext_load_gl(GLADloadfunc load) { return glext_load_gl_user_ptr(glext_get_proc_from_userptr, GLEXT_GNUC_EXTENSION(void *) load); }
 
 #ifdef __cplusplus
 }
