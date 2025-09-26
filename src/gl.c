@@ -456,9 +456,9 @@ PFNGLVERTEXATTRIBI4UBVPROC gl_vertex_attrib_i4ubv = NULL;
 PFNGLVERTEXATTRIBI4UIPROC gl_vertex_attrib_i4ui = NULL;
 PFNGLVERTEXATTRIBI4UIVPROC gl_vertex_attrib_i4uiv = NULL;
 PFNGLVERTEXATTRIBI4USVPROC gl_vertex_attrib_i4usv = NULL;
-PFNGLVERTEXATTRIBIFORMATPROC gl_vertex_attrib_i_format = NULL;
-PFNGLVERTEXATTRIBIPOINTERPROC gl_vertex_attrib_i_pointer = NULL;
-PFNGLVERTEXATTRIBLFORMATPROC gl_vertex_attrib_l_format = NULL;
+PFNGLVERTEXATTRIBIFORMATPROC gl_vertex_attrib_iformat = NULL;
+PFNGLVERTEXATTRIBIPOINTERPROC gl_vertex_attrib_ipointer = NULL;
+PFNGLVERTEXATTRIBLFORMATPROC gl_vertex_attrib_lformat = NULL;
 PFNGLVERTEXATTRIBP1UIPROC gl_vertex_attrib_p1ui = NULL;
 PFNGLVERTEXATTRIBP1UIVPROC gl_vertex_attrib_p1uiv = NULL;
 PFNGLVERTEXATTRIBP2UIPROC gl_vertex_attrib_p2ui = NULL;
@@ -782,7 +782,7 @@ static void glext_load_gl_version_3_0(GLADuserptrloadfunc load, void *userptr) {
   gl_vertex_attrib_i4ui = (PFNGLVERTEXATTRIBI4UIPROC)load(userptr, "glVertexAttribI4ui");
   gl_vertex_attrib_i4uiv = (PFNGLVERTEXATTRIBI4UIVPROC)load(userptr, "glVertexAttribI4uiv");
   gl_vertex_attrib_i4usv = (PFNGLVERTEXATTRIBI4USVPROC)load(userptr, "glVertexAttribI4usv");
-  gl_vertex_attrib_i_pointer = (PFNGLVERTEXATTRIBIPOINTERPROC)load(userptr, "glVertexAttribIPointer");
+  gl_vertex_attrib_ipointer = (PFNGLVERTEXATTRIBIPOINTERPROC)load(userptr, "glVertexAttribIPointer");
 }
 static void glext_load_gl_version_3_1(GLADuserptrloadfunc load, void *userptr) {
   if (!GLEXT_GL_VERSION_3_1) return;
@@ -951,8 +951,8 @@ static void glext_load_gl_arb_vertex_attrib_binding(GLADuserptrloadfunc load, vo
   gl_bind_vertex_buffer = (PFNGLBINDVERTEXBUFFERPROC)load(userptr, "glBindVertexBuffer");
   gl_vertex_attrib_binding = (PFNGLVERTEXATTRIBBINDINGPROC)load(userptr, "glVertexAttribBinding");
   gl_vertex_attrib_format = (PFNGLVERTEXATTRIBFORMATPROC)load(userptr, "glVertexAttribFormat");
-  gl_vertex_attrib_i_format = (PFNGLVERTEXATTRIBIFORMATPROC)load(userptr, "glVertexAttribIFormat");
-  gl_vertex_attrib_l_format = (PFNGLVERTEXATTRIBLFORMATPROC)load(userptr, "glVertexAttribLFormat");
+  gl_vertex_attrib_iformat = (PFNGLVERTEXATTRIBIFORMATPROC)load(userptr, "glVertexAttribIFormat");
+  gl_vertex_attrib_lformat = (PFNGLVERTEXATTRIBLFORMATPROC)load(userptr, "glVertexAttribLFormat");
   gl_vertex_binding_divisor = (PFNGLVERTEXBINDINGDIVISORPROC)load(userptr, "glVertexBindingDivisor");
 }
 
