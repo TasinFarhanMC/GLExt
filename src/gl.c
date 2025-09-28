@@ -472,7 +472,7 @@ PFNGLVERTEXBINDINGDIVISORPROC gl_vertex_binding_divisor = NULL;
 PFNGLVIEWPORTPROC gl_viewport = NULL;
 PFNGLWAITSYNCPROC gl_wait_sync = NULL;
 
-static void glext_load_gl_version_1_0(GLADuserptrloadfunc load, void *userptr) {
+static void glext_load_gl_version_1_0(GLExtUserPtrLoadFunc load, void *userptr) {
   if (!GLEXT_GL_VERSION_1_0) return;
   gl_blend_func = (PFNGLBLENDFUNCPROC)load(userptr, "glBlendFunc");
   gl_clear = (PFNGLCLEARPROC)load(userptr, "glClear");
@@ -523,7 +523,7 @@ static void glext_load_gl_version_1_0(GLADuserptrloadfunc load, void *userptr) {
   gl_tex_parameteriv = (PFNGLTEXPARAMETERIVPROC)load(userptr, "glTexParameteriv");
   gl_viewport = (PFNGLVIEWPORTPROC)load(userptr, "glViewport");
 }
-static void glext_load_gl_version_1_1(GLADuserptrloadfunc load, void *userptr) {
+static void glext_load_gl_version_1_1(GLExtUserPtrLoadFunc load, void *userptr) {
   if (!GLEXT_GL_VERSION_1_1) return;
   gl_bind_texture = (PFNGLBINDTEXTUREPROC)load(userptr, "glBindTexture");
   gl_copy_tex_image1d = (PFNGLCOPYTEXIMAGE1DPROC)load(userptr, "glCopyTexImage1D");
@@ -539,14 +539,14 @@ static void glext_load_gl_version_1_1(GLADuserptrloadfunc load, void *userptr) {
   gl_tex_sub_image1d = (PFNGLTEXSUBIMAGE1DPROC)load(userptr, "glTexSubImage1D");
   gl_tex_sub_image2d = (PFNGLTEXSUBIMAGE2DPROC)load(userptr, "glTexSubImage2D");
 }
-static void glext_load_gl_version_1_2(GLADuserptrloadfunc load, void *userptr) {
+static void glext_load_gl_version_1_2(GLExtUserPtrLoadFunc load, void *userptr) {
   if (!GLEXT_GL_VERSION_1_2) return;
   gl_copy_tex_sub_image3d = (PFNGLCOPYTEXSUBIMAGE3DPROC)load(userptr, "glCopyTexSubImage3D");
   gl_draw_range_elements = (PFNGLDRAWRANGEELEMENTSPROC)load(userptr, "glDrawRangeElements");
   gl_tex_image3d = (PFNGLTEXIMAGE3DPROC)load(userptr, "glTexImage3D");
   gl_tex_sub_image3d = (PFNGLTEXSUBIMAGE3DPROC)load(userptr, "glTexSubImage3D");
 }
-static void glext_load_gl_version_1_3(GLADuserptrloadfunc load, void *userptr) {
+static void glext_load_gl_version_1_3(GLExtUserPtrLoadFunc load, void *userptr) {
   if (!GLEXT_GL_VERSION_1_3) return;
   gl_active_texture = (PFNGLACTIVETEXTUREPROC)load(userptr, "glActiveTexture");
   gl_compressed_tex_image1d = (PFNGLCOMPRESSEDTEXIMAGE1DPROC)load(userptr, "glCompressedTexImage1D");
@@ -558,7 +558,7 @@ static void glext_load_gl_version_1_3(GLADuserptrloadfunc load, void *userptr) {
   gl_get_compressed_tex_image = (PFNGLGETCOMPRESSEDTEXIMAGEPROC)load(userptr, "glGetCompressedTexImage");
   gl_sample_coverage = (PFNGLSAMPLECOVERAGEPROC)load(userptr, "glSampleCoverage");
 }
-static void glext_load_gl_version_1_4(GLADuserptrloadfunc load, void *userptr) {
+static void glext_load_gl_version_1_4(GLExtUserPtrLoadFunc load, void *userptr) {
   if (!GLEXT_GL_VERSION_1_4) return;
   gl_blend_color = (PFNGLBLENDCOLORPROC)load(userptr, "glBlendColor");
   gl_blend_equation = (PFNGLBLENDEQUATIONPROC)load(userptr, "glBlendEquation");
@@ -570,7 +570,7 @@ static void glext_load_gl_version_1_4(GLADuserptrloadfunc load, void *userptr) {
   gl_point_parameteri = (PFNGLPOINTPARAMETERIPROC)load(userptr, "glPointParameteri");
   gl_point_parameteriv = (PFNGLPOINTPARAMETERIVPROC)load(userptr, "glPointParameteriv");
 }
-static void glext_load_gl_version_1_5(GLADuserptrloadfunc load, void *userptr) {
+static void glext_load_gl_version_1_5(GLExtUserPtrLoadFunc load, void *userptr) {
   if (!GLEXT_GL_VERSION_1_5) return;
   gl_begin_query = (PFNGLBEGINQUERYPROC)load(userptr, "glBeginQuery");
   gl_bind_buffer = (PFNGLBINDBUFFERPROC)load(userptr, "glBindBuffer");
@@ -592,7 +592,7 @@ static void glext_load_gl_version_1_5(GLADuserptrloadfunc load, void *userptr) {
   gl_map_buffer = (PFNGLMAPBUFFERPROC)load(userptr, "glMapBuffer");
   gl_unmap_buffer = (PFNGLUNMAPBUFFERPROC)load(userptr, "glUnmapBuffer");
 }
-static void glext_load_gl_version_2_0(GLADuserptrloadfunc load, void *userptr) {
+static void glext_load_gl_version_2_0(GLExtUserPtrLoadFunc load, void *userptr) {
   if (!GLEXT_GL_VERSION_2_0) return;
   gl_attach_shader = (PFNGLATTACHSHADERPROC)load(userptr, "glAttachShader");
   gl_bind_attrib_location = (PFNGLBINDATTRIBLOCATIONPROC)load(userptr, "glBindAttribLocation");
@@ -688,7 +688,7 @@ static void glext_load_gl_version_2_0(GLADuserptrloadfunc load, void *userptr) {
   gl_vertex_attrib4usv = (PFNGLVERTEXATTRIB4USVPROC)load(userptr, "glVertexAttrib4usv");
   gl_vertex_attrib_pointer = (PFNGLVERTEXATTRIBPOINTERPROC)load(userptr, "glVertexAttribPointer");
 }
-static void glext_load_gl_version_2_1(GLADuserptrloadfunc load, void *userptr) {
+static void glext_load_gl_version_2_1(GLExtUserPtrLoadFunc load, void *userptr) {
   if (!GLEXT_GL_VERSION_2_1) return;
   gl_uniform_matrix2x3fv = (PFNGLUNIFORMMATRIX2X3FVPROC)load(userptr, "glUniformMatrix2x3fv");
   gl_uniform_matrix2x4fv = (PFNGLUNIFORMMATRIX2X4FVPROC)load(userptr, "glUniformMatrix2x4fv");
@@ -697,7 +697,7 @@ static void glext_load_gl_version_2_1(GLADuserptrloadfunc load, void *userptr) {
   gl_uniform_matrix4x2fv = (PFNGLUNIFORMMATRIX4X2FVPROC)load(userptr, "glUniformMatrix4x2fv");
   gl_uniform_matrix4x3fv = (PFNGLUNIFORMMATRIX4X3FVPROC)load(userptr, "glUniformMatrix4x3fv");
 }
-static void glext_load_gl_version_3_0(GLADuserptrloadfunc load, void *userptr) {
+static void glext_load_gl_version_3_0(GLExtUserPtrLoadFunc load, void *userptr) {
   if (!GLEXT_GL_VERSION_3_0) return;
   gl_begin_conditional_render = (PFNGLBEGINCONDITIONALRENDERPROC)load(userptr, "glBeginConditionalRender");
   gl_begin_transform_feedback = (PFNGLBEGINTRANSFORMFEEDBACKPROC)load(userptr, "glBeginTransformFeedback");
@@ -784,7 +784,7 @@ static void glext_load_gl_version_3_0(GLADuserptrloadfunc load, void *userptr) {
   gl_vertex_attrib_i4usv = (PFNGLVERTEXATTRIBI4USVPROC)load(userptr, "glVertexAttribI4usv");
   gl_vertex_attrib_ipointer = (PFNGLVERTEXATTRIBIPOINTERPROC)load(userptr, "glVertexAttribIPointer");
 }
-static void glext_load_gl_version_3_1(GLADuserptrloadfunc load, void *userptr) {
+static void glext_load_gl_version_3_1(GLExtUserPtrLoadFunc load, void *userptr) {
   if (!GLEXT_GL_VERSION_3_1) return;
   gl_bind_buffer_base = (PFNGLBINDBUFFERBASEPROC)load(userptr, "glBindBufferBase");
   gl_bind_buffer_range = (PFNGLBINDBUFFERRANGEPROC)load(userptr, "glBindBufferRange");
@@ -802,7 +802,7 @@ static void glext_load_gl_version_3_1(GLADuserptrloadfunc load, void *userptr) {
   gl_tex_buffer = (PFNGLTEXBUFFERPROC)load(userptr, "glTexBuffer");
   gl_uniform_block_binding = (PFNGLUNIFORMBLOCKBINDINGPROC)load(userptr, "glUniformBlockBinding");
 }
-static void glext_load_gl_version_3_2(GLADuserptrloadfunc load, void *userptr) {
+static void glext_load_gl_version_3_2(GLExtUserPtrLoadFunc load, void *userptr) {
   if (!GLEXT_GL_VERSION_3_2) return;
   gl_client_wait_sync = (PFNGLCLIENTWAITSYNCPROC)load(userptr, "glClientWaitSync");
   gl_delete_sync = (PFNGLDELETESYNCPROC)load(userptr, "glDeleteSync");
@@ -824,7 +824,7 @@ static void glext_load_gl_version_3_2(GLADuserptrloadfunc load, void *userptr) {
   gl_tex_image3d_multisample = (PFNGLTEXIMAGE3DMULTISAMPLEPROC)load(userptr, "glTexImage3DMultisample");
   gl_wait_sync = (PFNGLWAITSYNCPROC)load(userptr, "glWaitSync");
 }
-static void glext_load_gl_version_3_3(GLADuserptrloadfunc load, void *userptr) {
+static void glext_load_gl_version_3_3(GLExtUserPtrLoadFunc load, void *userptr) {
   if (!GLEXT_GL_VERSION_3_3) return;
   gl_bind_frag_data_location_indexed = (PFNGLBINDFRAGDATALOCATIONINDEXEDPROC)load(userptr, "glBindFragDataLocationIndexed");
   gl_bind_sampler = (PFNGLBINDSAMPLERPROC)load(userptr, "glBindSampler");
@@ -855,24 +855,24 @@ static void glext_load_gl_version_3_3(GLADuserptrloadfunc load, void *userptr) {
   gl_vertex_attrib_p4ui = (PFNGLVERTEXATTRIBP4UIPROC)load(userptr, "glVertexAttribP4ui");
   gl_vertex_attrib_p4uiv = (PFNGLVERTEXATTRIBP4UIVPROC)load(userptr, "glVertexAttribP4uiv");
 }
-static void glext_load_gl_arb_base_instance(GLADuserptrloadfunc load, void *userptr) {
+static void glext_load_gl_arb_base_instance(GLExtUserPtrLoadFunc load, void *userptr) {
   if (!GLEXT_GL_ARB_base_instance) return;
   gl_draw_arrays_instanced_base_instance = (PFNGLDRAWARRAYSINSTANCEDBASEINSTANCEPROC)load(userptr, "glDrawArraysInstancedBaseInstance");
   gl_draw_elements_instanced_base_instance = (PFNGLDRAWELEMENTSINSTANCEDBASEINSTANCEPROC)load(userptr, "glDrawElementsInstancedBaseInstance");
   gl_draw_elements_instanced_base_vertex_base_instance =
       (PFNGLDRAWELEMENTSINSTANCEDBASEVERTEXBASEINSTANCEPROC)load(userptr, "glDrawElementsInstancedBaseVertexBaseInstance");
 }
-static void glext_load_gl_arb_draw_indirect(GLADuserptrloadfunc load, void *userptr) {
+static void glext_load_gl_arb_draw_indirect(GLExtUserPtrLoadFunc load, void *userptr) {
   if (!GLEXT_GL_ARB_draw_indirect) return;
   gl_draw_arrays_indirect = (PFNGLDRAWARRAYSINDIRECTPROC)load(userptr, "glDrawArraysIndirect");
   gl_draw_elements_indirect = (PFNGLDRAWELEMENTSINDIRECTPROC)load(userptr, "glDrawElementsIndirect");
 }
-static void glext_load_gl_arb_multi_draw_indirect(GLADuserptrloadfunc load, void *userptr) {
+static void glext_load_gl_arb_multi_draw_indirect(GLExtUserPtrLoadFunc load, void *userptr) {
   if (!GLEXT_GL_ARB_multi_draw_indirect) return;
   gl_multi_draw_arrays_indirect = (PFNGLMULTIDRAWARRAYSINDIRECTPROC)load(userptr, "glMultiDrawArraysIndirect");
   gl_multi_draw_elements_indirect = (PFNGLMULTIDRAWELEMENTSINDIRECTPROC)load(userptr, "glMultiDrawElementsIndirect");
 }
-static void glext_load_gl_arb_separate_shader_objects(GLADuserptrloadfunc load, void *userptr) {
+static void glext_load_gl_arb_separate_shader_objects(GLExtUserPtrLoadFunc load, void *userptr) {
   if (!GLEXT_GL_ARB_separate_shader_objects) return;
   gl_active_shader_program = (PFNGLACTIVESHADERPROGRAMPROC)load(userptr, "glActiveShaderProgram");
   gl_bind_program_pipeline = (PFNGLBINDPROGRAMPIPELINEPROC)load(userptr, "glBindProgramPipeline");
@@ -936,17 +936,17 @@ static void glext_load_gl_arb_separate_shader_objects(GLADuserptrloadfunc load, 
   gl_use_program_stages = (PFNGLUSEPROGRAMSTAGESPROC)load(userptr, "glUseProgramStages");
   gl_validate_program_pipeline = (PFNGLVALIDATEPROGRAMPIPELINEPROC)load(userptr, "glValidateProgramPipeline");
 }
-static void glext_load_gl_arb_texture_buffer_range(GLADuserptrloadfunc load, void *userptr) {
+static void glext_load_gl_arb_texture_buffer_range(GLExtUserPtrLoadFunc load, void *userptr) {
   if (!GLEXT_GL_ARB_texture_buffer_range) return;
   gl_tex_buffer_range = (PFNGLTEXBUFFERRANGEPROC)load(userptr, "glTexBufferRange");
 }
-static void glext_load_gl_arb_texture_storage(GLADuserptrloadfunc load, void *userptr) {
+static void glext_load_gl_arb_texture_storage(GLExtUserPtrLoadFunc load, void *userptr) {
   if (!GLEXT_GL_ARB_texture_storage) return;
   gl_tex_storage1d = (PFNGLTEXSTORAGE1DPROC)load(userptr, "glTexStorage1D");
   gl_tex_storage2d = (PFNGLTEXSTORAGE2DPROC)load(userptr, "glTexStorage2D");
   gl_tex_storage3d = (PFNGLTEXSTORAGE3DPROC)load(userptr, "glTexStorage3D");
 }
-static void glext_load_gl_arb_vertex_attrib_binding(GLADuserptrloadfunc load, void *userptr) {
+static void glext_load_gl_arb_vertex_attrib_binding(GLExtUserPtrLoadFunc load, void *userptr) {
   if (!GLEXT_GL_ARB_vertex_attrib_binding) return;
   gl_bind_vertex_buffer = (PFNGLBINDVERTEXBUFFERPROC)load(userptr, "glBindVertexBuffer");
   gl_vertex_attrib_binding = (PFNGLVERTEXATTRIBBINDINGPROC)load(userptr, "glVertexAttribBinding");
@@ -1024,8 +1024,8 @@ static int glext_has_extension(const char *exts, char **exts_i, const char *ext)
   return 0;
 }
 
-static GLADapiproc glext_get_proc_from_userptr(void *userptr, const char *name) {
-  return (GLEXT_GNUC_EXTENSION(GLADapiproc (*)(const char *name)) userptr)(name);
+static GLExtApiProc glext_get_proc_from_userptr(void *userptr, const char *name) {
+  return (GLEXT_GNUC_EXTENSION(GLExtApiProc (*)(const char *name)) userptr)(name);
 }
 
 static int glext_find_extensions_gl(void) {
@@ -1083,7 +1083,7 @@ static int glext_find_core_gl(void) {
   return GLEXT_MAKE_VERSION(major, minor);
 }
 
-int glext_load_gl_user_ptr(GLADuserptrloadfunc load, void *userptr) {
+int glext_load_gl_user_ptr(GLExtUserPtrLoadFunc load, void *userptr) {
   int version;
 
   gl_get_string = (PFNGLGETSTRINGPROC)load(userptr, "glGetString");
@@ -1115,7 +1115,7 @@ int glext_load_gl_user_ptr(GLADuserptrloadfunc load, void *userptr) {
   return version;
 }
 
-int glext_load_gl(GLADloadfunc load) { return glext_load_gl_user_ptr(glext_get_proc_from_userptr, GLEXT_GNUC_EXTENSION(void *) load); }
+int glext_load_gl(GLExtLoadFunc load) { return glext_load_gl_user_ptr(glext_get_proc_from_userptr, GLEXT_GNUC_EXTENSION(void *) load); }
 
 #ifdef __cplusplus
 }

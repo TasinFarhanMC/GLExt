@@ -165,13 +165,13 @@ extern "C" {
 
 #define GLEXT_GENERATOR_VERSION "2.0.8"
 
-typedef void (*GLADapiproc)(void);
+typedef void (*GLExtApiProc)(void);
 
-typedef GLADapiproc (*GLADloadfunc)(const char *name);
-typedef GLADapiproc (*GLADuserptrloadfunc)(void *userptr, const char *name);
+typedef GLExtApiProc (*GLExtLoadFunc)(const char *name);
+typedef GLExtApiProc (*GLExtUserPtrLoadFunc)(void *userptr, const char *name);
 
-typedef void (*GLADprecallback)(const char *name, GLADapiproc apiproc, int len_args, ...);
-typedef void (*GLADpostcallback)(void *ret, const char *name, GLADapiproc apiproc, int len_args, ...);
+typedef void (*GLExtPreCallback)(const char *name, GLExtApiProc apiproc, int len_args, ...);
+typedef void (*GLExtPostCallback)(void *ret, const char *name, GLExtApiProc apiproc, int len_args, ...);
 
 #endif /* GLEXT_PLATFORM_H_ */
 
@@ -1976,8 +1976,8 @@ GLEXT_API_CALL PFNGLVERTEXBINDINGDIVISORPROC gl_vertex_binding_divisor;
 GLEXT_API_CALL PFNGLVIEWPORTPROC gl_viewport;
 GLEXT_API_CALL PFNGLWAITSYNCPROC gl_wait_sync;
 
-GLEXT_API_CALL int glext_load_gl_user_ptr( GLADuserptrloadfunc load, void *userptr);
-GLEXT_API_CALL int glext_load_gl( GLADloadfunc load);
+GLEXT_API_CALL int glext_load_gl_user_ptr( GLExtUserPtrLoadFunc load, void *userptr);
+GLEXT_API_CALL int glext_load_gl( GLExtLoadFunc load);
 
 #ifdef __cplusplus
 }
